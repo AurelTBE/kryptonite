@@ -1,7 +1,7 @@
 import { HiMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
-import logo from "../../images/logo.png" 
 import { useState } from 'react';
+import logo from '../../images/kryptonite.svg'
 
 interface INavbarItem {
     title: string,
@@ -22,14 +22,14 @@ const Navbar = () => {
     return (
         <nav className="w-full flex md:justify-center justify-between items-center p-4">
             <div className='md:flex-[0.5] flex-initial justify-center items-center'>
-                <img src={logo} alt="Kryptonite-Logo" className='w-32 cursor-pointer' />
+                <img src={logo} alt="Kryptonite-Logo" className='w-[50vw] md:w-[20vw] cursor-pointer' />
             </div>
             <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
-                {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
+                {["Market", "Exchange", "Tutoriels", "Wallet"].map((item, index) => (
                     <NavbarItem key={item + index} title={item} classProps={''} />
                 ))}
                 <li className='bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]'>
-                    Login
+                    Connexion
                 </li>
             </ul>
             <div className="flex relative">
@@ -47,7 +47,7 @@ const Navbar = () => {
                         <li className="text-xl w-full my-2">
                             <AiOutlineClose onClick={() => setToggleMenu(false)} />
                         </li>
-                        {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
+                        {["Market", "Exchange", "Tutoriels", "Wallet"].map((item, index) => (
                             <NavbarItem key={item + index} title={item} classProps="my-2 text-lg" />
                         ))}
                     </ul>
